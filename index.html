@@ -1,0 +1,119 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license. -->
+<!-- See LICENSE in the project root for license information -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Excel Custom Document Properties Lab</title>
+
+    <!-- Office JavaScript API BETA CDN -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
+
+    <!-- Required -->
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="node_modules/core-js/client/core.js"></script>
+    <script type="text/javascript" src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+    <!-- <script type="text/javascript" src="node_modules/office-ui-fabric/dist/js/jquery.fabric.min.js"></script> -->
+
+    <!-- Source -->
+    <script type="text/javascript" src="index.js"></script>
+
+    <!-- Fabric -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css" />
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css" />
+    <!-- <link rel="stylesheet" href="node_modules/office-ui-fabric/dist/css/fabric.min.css" />
+    <link rel="stylesheet" href="node_modules/office-ui-fabric/dist/css/fabric.components.css" /> -->
+</head>
+
+<body class="ms-font-m ms-welcome">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter ms-u-fadeIn500">
+        <img width="90" height="90" src="assets/logo-filled.png" alt="Excel Custom Document Properties Lab" title="Excel Custom Document Properties Lab" />
+        <h1 class="ms-fontSize-su ms-fontWeight-light ms-fontColor-neutralPrimary">Document Properties</h1>        
+    </header>
+    <main class="ms-welcome__main">
+        <div class="ms-font-s" >This add-in demonstrates the reading of document properties and custom document properties and then the setting of custom document properties.</div>
+        <br/>
+        <div>
+            <div class="ms-font-l" >Document Properties</div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Author:</label>
+                <input id="doc-prop-author" class="ms-TextField-field" disabled type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Last author:</label>
+                <input id="doc-prop-last" class="ms-TextField-field" disabled type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Revision number:</label>
+                <input id="doc-prop-revison" class="ms-TextField-field" disabled type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Title:</label>
+                <input id="doc-prop-title" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Subject:</label>
+                <input id="doc-prop-subject" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Keywords:</label>
+                <input id="doc-prop-keywords" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Comments:</label>
+                <input id="doc-prop-comments" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Category:</label>
+                <input id="doc-prop-category" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Manager:</label>
+                <input id="doc-prop-manager" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Company:</label>
+                <input id="doc-prop-company" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Creation date:</label>
+                <input id="doc-prop-create" class="ms-TextField-field" disabled type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">First Value:</label>
+                <input id="custom-doc-property-firstvalue" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Second Value:</label>
+                <input id="custom-doc-property-secondvalue" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+            <div class="ms-TextField">
+                <label class="ms-Label">Third Value:</label>
+                <input id="custom-doc-property-thirdvalue" class="ms-TextField-field" type="text" value="" placeholder="">
+            </div>
+        </div>
+        <button id="set-custom-doc-properties" class="ms-Button ms-Button--primary">
+            <span class="ms-Button-label">Set</span>
+        </button>
+        <div id="message-banner" class="ms-MessageBanner">
+            <div class="ms-MessageBanner-content">
+                <div class="ms-MessageBanner-text">
+                    <div class="ms-MessageBanner-clipper">
+                        The document properties have been saved.
+                    </div>
+                </div>
+                <button class="ms-MessageBanner-expand">
+                    <i class="ms-Icon ms-Icon--ChevronDown"></i>
+                </button>
+                <div class="ms-MessageBanner-action">
+                </div>
+            </div>
+            <button class="ms-MessageBanner-close">
+                <i class="ms-Icon ms-Icon--Cancel"></i>
+            </button>
+        </div>
+    </main>
+</body>
+</html>
